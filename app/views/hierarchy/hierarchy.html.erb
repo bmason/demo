@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<h1>Class Hierarchy </h1>
+<!--%= debug params[:top] %-->
+
+<% Kernel.const_get(params[:top].nil? ? 'Object' : params[:top]).subclasses.each { |klass|  %>
+<%= klass %>
+<br>
+<% } %>
+
+
+
+
