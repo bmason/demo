@@ -17,3 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.0.2'
+
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg'
+end
