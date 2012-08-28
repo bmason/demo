@@ -3,10 +3,14 @@
 	<h1>Class Hierarchy </h1>
 <!--%= debug params[:top] %-->
 
-<% Kernel.const_get(params[:top].nil? ? 'Object' : params[:top]).subclasses.each { |klass|  %>
+<% time = Benchmark.measure do %>
+<% @klasses = Kernel.const_get(params[:top].nil? ? 'Object' : params[:top]).subclasses %>
+<% end %>
+<% @klasses.each { |klass|  %>
 <%= klass %>
 <br>
 <% } %>
+<%= time %>
 
 
 
