@@ -3,11 +3,13 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)
+    # assert_select "form input", maximum: 6
   end
 
   test "should get index" do
     get :index
     assert_response :success
+    # assert_select "title", {:text => /De.*/}
     assert_not_nil assigns(:users)
   end
 
@@ -46,4 +48,9 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+  
+
+ 
+
+
 end
